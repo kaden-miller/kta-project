@@ -1,0 +1,23 @@
+@import './base.css';
+@config "../../tailwind.config.js";
+@import 'tailwindcss';
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px;
+  font-weight: normal;
+}
+
+a {
+  color: #331b3b;
+}
+
+@media (hover: hover) {
+  a:hover {
+    /* Space for adding the color change on hover */
+  }
+}
+
+@media (min-width: 1024px) {
+}
