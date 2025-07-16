@@ -8,7 +8,11 @@
       </p>
     </div>
 
-    <form v-else @submit.prevent="handleSubmit" class="flex flex-wrap gap-x-2 gap-y-6">
+    <form
+      v-else
+      @submit.prevent="handleSubmit"
+      class="flex flex-col lg:flex-row flex-wrap gap-x-2 gap-y-4 lg:gap-y-6"
+    >
       <div class="flex-1">
         <label for="fullName" class="block text-sm text-accent mb-1 uppercase">Full Name</label>
         <input

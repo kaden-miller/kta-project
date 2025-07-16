@@ -1,11 +1,11 @@
 <template>
-  <section class="content-section py-20 px-10">
-    <div class="content-container grid grid-cols-2 items-center">
+  <section class="content-section py-20 px-6 lg:px-10">
+    <div class="content-container grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-0">
       <div class="content-image">
         <img :src="imageSrc" :alt="imageAlt" />
       </div>
-      <div class="content-text px-8 flex flex-col gap-6 items-start">
-        <h2 class="content-headline text-4xl text-accent tracking-tight">
+      <div class="content-text px-0 lg:px-8 flex flex-col gap-6 items-start">
+        <h2 class="content-headline text-2xl md:text-3xl lg:text-4xl text-accent tracking-tight">
           <slot name="headline"></slot>
         </h2>
 

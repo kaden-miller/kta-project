@@ -1,8 +1,8 @@
 <template>
-  <section class="hero-section pt-50 pb-40 px-10 relative">
+  <section class="hero-section pt-40 lg:pt-50 pb-20 lg:pb-40 px-6 lg:px-10 relative">
     <div class="hero-container">
-      <div class="hero-content col-span-2 flex flex-col items-start gap-6 pr-4">
-        <h1 class="hero-headline text-6xl text-accent w-80">
+      <div class="hero-content col-span-2 flex flex-col items-start gap-6 lg:pr-4">
+        <h1 class="hero-headline text-3xl md:text-4xl lg:text-6xl text-accent w-40 lg:w-80">
           <b><UnderlineText text="About Us" :underlineLength="6" underlineHeight="18px" /></b>
           our dream story
         </h1>
@@ -34,7 +34,7 @@
           augue duis dolore te feugait nulla facilisi.
         </p>
       </div>
-      <div class="hero-image absolute -top-2 right-0">
+      <div class="hero-image absolute -top-2 right-0 max-w-60 md:max-w-full">
         <img src="/images/page-header-graphic.svg" />
       </div>
     </div>

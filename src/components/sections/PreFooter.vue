@@ -1,7 +1,9 @@
 <template>
-  <section class="prefooter-section bg-accent px-10 pt-9 pb-8 text-white rounded-tr-[128px]">
-    <div class="prefooter-container grid grid-cols-5 gap-9">
-      <div class="prefooter-left col-span-2">
+  <section
+    class="prefooter-section bg-accent px-6 lg:px-10 pt-9 pb-8 text-white rounded-tr-[100px] md:rounded-tr-[128px]"
+  >
+    <div class="prefooter-container grid grid-cols-1 lg:grid-cols-5 gap-9">
+      <div class="prefooter-left lg:col-span-2">
         <div class="logo-section pb-4">
           <span class="logo-text font-serif text-2xl font-bold">Dream Agency</span>
         </div>
@@ -9,7 +11,7 @@
           {{ leftText || 'This is a great section to set up to be reused on other pages.' }}
         </p>
       </div>
-      <div class="prefooter-right col-span-3 flex flex-col gap-4 justify-end items-start">
+      <div class="prefooter-right lg:col-span-3 flex flex-col gap-4 justify-end items-start">
         <h3 class="prefooter-cta-headline text-white uppercase font-bold text-lg">
           {{ rightHeadline || 'Right CTA headline that goes above button.' }}
         </h3>

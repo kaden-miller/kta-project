@@ -5,14 +5,14 @@
       isScrolled ? 'bg-white shadow-sm py-4' : 'bg-transparent py-8',
     ]"
   >
-    <div class="header-container flex justify-between items-center px-10">
+    <div class="header-container flex justify-between items-center px-6 lg:px-10">
       <div class="logo-section">
         <RouterLink to="/" class="logo-link">
           <span class="logo-text font-serif text-xl font-bold text-accent">Dream Agency</span>
         </RouterLink>
       </div>
 
-      <nav class="nav-menu flex gap-8">
+      <nav class="nav-menu hidden md:flex gap-8">
         <RouterLink
           to="/"
           class="nav-link relative text-accent transition"
@@ -35,6 +35,67 @@
           Contact
         </button>
       </nav>
+
+      <button
+        @click="toggleMobileMenu"
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+      >
+        <span
+          :class="[
+            'block w-6 h-0.5 bg-accent transition-transform duration-300',
+            mobileMenuOpen ? 'rotate-45 translate-y-2' : '',
+          ]"
+        ></span>
+        <span
+          :class="[
+            'block w-6 h-0.5 bg-accent transition-opacity duration-300',
+            mobileMenuOpen ? 'opacity-0' : 'opacity-100',
+          ]"
+        ></span>
+        <span
+          :class="[
+            'block w-6 h-0.5 bg-accent transition-transform duration-300',
+            mobileMenuOpen ? '-rotate-45 -translate-y-1' : '',
+          ]"
+        ></span>
+      </button>
+    </div>
+
+    <div
+      v-if="mobileMenuOpen"
+      class="md:hidden bg-white shadow-lg shadow-accent-light/20 mt-2 border-t-2 border-secondary"
+    >
+      <nav class="flex flex-col">
+        <RouterLink
+          to="/"
+          @click="closeMobileMenu"
+          class="mobile-nav-link px-6 py-3 text-accent hover:bg-secondary-light transition"
+          active-class="font-bold bg-secondary-light"
+        >
+          Home
+        </RouterLink>
+        <RouterLink
+          to="/about"
+          @click="closeMobileMenu"
+          class="mobile-nav-link px-6 py-3 text-accent hover:bg-secondary-light transition"
+          active-class="font-bold bg-secondary-light"
+        >
+          About
+        </RouterLink>
+        <RouterLink
+          to="/"
+          @click="closeMobileMenu"
+          class="mobile-nav-link px-6 py-3 text-accent hover:bg-secondary-light transition"
+        >
+          Services
+        </RouterLink>
+        <button
+          @click="openModalAndCloseMenu"
+          class="mobile-nav-link px-6 py-3 text-accent hover:bg-secondary-light transition text-left"
+        >
+          Contact
+        </button>
+      </nav>
     </div>
   </header>
 </template>
@@ -46,6 +107,7 @@ export default {
   data() {
     return {
       isScrolled: false,
+      mobileMenuOpen: false,
     }
   },
   methods: {
@@ -54,6 +116,16 @@ export default {
     },
     openModal() {
       this.$emit('open-contact-modal')
+    },
+    toggleMobileMenu() {
+      this.mobileMenuOpen = !this.mobileMenuOpen
+    },
+    closeMobileMenu() {
+      this.mobileMenuOpen = false
+    },
+    openModalAndCloseMenu() {
+      this.openModal()
+      this.closeMobileMenu()
     },
   },
   mounted() {
@@ -83,5 +155,9 @@ export default {
 
 .nav-link:not(.temp).router-link-exact-active::after {
   width: 20px;
+}
+
+.mobile-nav-link::after {
+  display: none;
 }
 </style>

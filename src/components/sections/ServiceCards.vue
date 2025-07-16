@@ -1,11 +1,13 @@
 <template>
-  <section id="services" class="service-cards-section py-20 px-10 relative">
+  <section id="services" class="service-cards-section py-20 px-6 lg:px-10 relative overflow-hidden">
     <div class="container">
-      <h2 class="section-headline text-4xl text-center text-accent pb-20">
+      <h2
+        class="section-headline text-2xl md:text-3xl lg:text-4xl text-center text-accent pb-10 lg:pb-20"
+      >
         <b>What We Do</b><br />
         For Your <UnderlineText text="Business" :underlineLength="6" underlineHeight="10px" />
       </h2>
-      <div class="cards-grid gap-8 grid grid-cols-4">
+      <div class="cards-grid gap-8 grid grid-cols-1 z-10 lg:grid-cols-4">
         <CardItem
           v-for="service in services"
           :key="service.id"
@@ -17,9 +19,9 @@
       </div>
     </div>
     <div
-      class="bg-secondary-light absolute w-9/10 h-full left-0 top-0 -z-10 rounded-tr-[400px]"
+      class="bg-secondary-light absolute w-full md:w-9/10 h-full left-0 top-0 -z-20 rounded-tr-[100px] md:rounded-tr-[400px]"
     ></div>
-    <div class="absolute right-0 -bottom-20 -z-20 rounded-tr-[400px]">
+    <div class="absolute -right-60 -bottom-20 -z-10 md:-z-30 md:right-0">
       <img src="/images/ellipse.svg" />
     </div>
   </section>
