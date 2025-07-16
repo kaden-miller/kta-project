@@ -13,6 +13,15 @@ export default {
         'neutral-light': '#FEE2E2',
         neutral: '#FCE7F3',
       },
+      fontFamily: {
+        sans: ['Arial', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
+      },
+      fontWeight: {
+        light: '180',
+        bold: '700',
+        black: '850',
+      },
     },
   },
   plugins: [],
