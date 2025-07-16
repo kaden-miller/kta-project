@@ -40,7 +40,7 @@ src
 │   │   ├── PreFooter.vue
 │   │   └── ServiceCards.vue
 │   └── ui
-│       ├── Button.vue
+│       ├── BaseButton.vue
 │       ├── CardItem.vue
 │       ├── ContactForm.vue
 │       ├── ContactModal.vue
