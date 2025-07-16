@@ -10,7 +10,7 @@
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
           unknown printer took a galley of type and scrambled it to make a type specimen book.
         </p>
-        <Button variant="accent" @click="$emit('cta-clicked')"> Get Started </Button>
+        <BaseButton variant="accent" @click="$emit('cta-clicked')"> Get Started </BaseButton>
       </div>
       <div class="hero-image absolute -top-2 right-0 w-80 lg:w-1/2">
         <img
@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import Button from '../ui/Button.vue'
+import BaseButton from '../ui/BaseButton.vue'
 import UnderlineText from '../ui/UnderlineText.vue'
 
 export default {
   name: 'HomeHero',
   emits: ['cta-clicked'],
   components: {
-    Button,
+    BaseButton,
     UnderlineText,
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-10">
+    <HeadlessDialog as="div" @close="closeModal" class="relative z-10">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -52,12 +52,18 @@
           </TransitionChild>
         </div>
       </div>
-    </Dialog>
+    </HeadlessDialog>
   </TransitionRoot>
 </template>
 
 <script>
-import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle } from '@headlessui/vue'
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog as HeadlessDialog,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/vue'
 import ContactForm from './ContactForm.vue'
 
 export default {
@@ -65,7 +71,7 @@ export default {
   components: {
     TransitionRoot,
     TransitionChild,
-    Dialog,
+    HeadlessDialog,
     DialogPanel,
     DialogTitle,
     ContactForm,

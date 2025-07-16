@@ -20,21 +20,21 @@
         <p v-else>
           {{ intro }}
         </p>
-        <Button variant="accent" @click="handleCTAClick">
+        <BaseButton variant="accent" @click="handleCTAClick">
           {{ ctaText }}
-        </Button>
+        </BaseButton>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Button from '../ui/Button.vue'
+import BaseButton from '../ui/BaseButton.vue'
 
 export default {
   name: 'ContentSection',
   components: {
-    Button,
+    BaseButton,
   },
   props: {
     headline: {

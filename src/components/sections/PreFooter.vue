@@ -15,20 +15,20 @@
         <h3 class="prefooter-cta-headline text-white uppercase font-bold text-lg">
           {{ rightHeadline || 'Right CTA headline that goes above button.' }}
         </h3>
-        <Button variant="primary" @click="handleCTAClick">
+        <BaseButton variant="primary" @click="handleCTAClick">
           {{ ctaText || 'CTA button text we can adjust on other pages.' }}
-        </Button>
+        </BaseButton>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Button from '../ui/Button.vue'
+import BaseButton from '../ui/BaseButton.vue'
 export default {
   name: 'PreFooter',
   components: {
-    Button,
+    BaseButton,
   },
   props: {
     leftText: {

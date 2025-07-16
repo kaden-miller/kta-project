@@ -62,18 +62,18 @@
         }}</span>
       </div>
 
-      <Button variant="accent" @click="handleSubmit"> Send </Button>
+      <BaseButton variant="accent" @click="handleSubmit"> Send </BaseButton>
     </form>
   </div>
 </template>
 
 <script>
-import Button from './Button.vue'
+import BaseButton from './BaseButton.vue'
 
 export default {
   name: 'ContactForm',
   components: {
-    Button,
+    BaseButton,
   },
   data() {
     return {
