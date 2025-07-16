@@ -1,5 +1,8 @@
 <template>
-  <section id="services" class="service-cards-section py-20 px-6 lg:px-10 relative overflow-hidden">
+  <section
+    id="services"
+    class="service-cards-section py-20 px-6 lg:px-10 relative overflow-hidden lg:overflow-visible"
+  >
     <div class="container">
       <h2
         class="section-headline text-2xl md:text-3xl lg:text-4xl text-center text-accent pb-10 lg:pb-20"
