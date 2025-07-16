@@ -2,9 +2,9 @@
   <section class="hero-section pt-50 pb-40 px-10 relative">
     <div class="hero-container">
       <div class="hero-content col-span-2 flex flex-col items-start gap-6 pr-4">
-        <h1 class="hero-headline text-6xl text-accent">
-          <b>We Help you</b><br />
-          to grow your Business
+        <h1 class="hero-headline text-6xl text-accent w-80">
+          <b><UnderlineText text="About Us" :underlineLength="6" underlineHeight="18px" /></b>
+          our dream story
         </h1>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -42,7 +42,12 @@
 </template>
 
 <script>
+import UnderlineText from '../ui/UnderlineText.vue'
+
 export default {
   name: 'HomeHero',
+  components: {
+    UnderlineText,
+  },
 }
 </script>

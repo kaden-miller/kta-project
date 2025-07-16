@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="section-headline text-4xl text-center text-accent pb-20">
         <b>What We Do</b><br />
-        For Your Business
+        For Your <UnderlineText text="Business" :underlineLength="6" underlineHeight="10px" />
       </h2>
       <div class="cards-grid gap-8 grid grid-cols-4">
         <CardItem
@@ -31,11 +31,13 @@ import ComputerIcon from '../icons/computer-icon.svg'
 import MobilePhoneIcon from '../icons/mobile-phone-icon.svg'
 import RocketIcon from '../icons/rocket-icon.svg'
 import WebsiteIcon from '../icons/website-icon.svg'
+import UnderlineText from '../ui/UnderlineText.vue'
 
 export default {
   name: 'ServiceCards',
   components: {
     CardItem,
+    UnderlineText,
   },
   data() {
     return {

@@ -5,7 +5,9 @@
         <img :src="imageSrc" :alt="imageAlt" />
       </div>
       <div class="content-text px-8 flex flex-col gap-6 items-start">
-        <h2 class="content-headline text-4xl text-accent tracking-tight" v-html="headline"></h2>
+        <h2 class="content-headline text-4xl text-accent tracking-tight">
+          <slot name="headline"></slot>
+        </h2>
 
         <!-- To handle multiple paragraphs, if it's an array of different paragraph lines we'll use this to display the content -->
         <div v-if="Array.isArray(intro)" class="flex flex-col gap-4">
