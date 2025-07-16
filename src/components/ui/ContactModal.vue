@@ -10,7 +10,7 @@
         leave-from="opacity-100"
         leave-to="opacity-0"
       >
-        <div class="fixed inset-0 bg-black/25" />
+        <div class="fixed inset-0 bg-black/20" />
       </TransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
@@ -25,28 +25,29 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
+              class="w-full max-w-2xl transform overflow-hidden rounded-xl bg-white p-8 text-left align-middle shadow-xl transition relative"
             >
-              <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                Contact Us
-              </DialogTitle>
-              <div class="mt-2">
-                <p class="text-sm text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris.
-                </p>
-              </div>
+              <button
+                type="button"
+                @click="closeModal"
+                class="absolute top-4 right-4 text-accent-light hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-light rounded-full p-2 transition-colors"
+                aria-label="Close modal"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
 
-              <div class="mt-4">
-                <button
-                  type="button"
-                  class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                  @click="closeModal"
-                >
-                  Got it, thanks!
-                </button>
-              </div>
+              <DialogTitle as="h3" class="text-lg font-bold leading-6 text-accent uppercase pb-4">
+                Get In Touch
+              </DialogTitle>
+
+              <ContactForm @close="closeModal" />
             </DialogPanel>
           </TransitionChild>
         </div>
@@ -57,6 +58,7 @@
 
 <script>
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle } from '@headlessui/vue'
+import ContactForm from './ContactForm.vue'
 
 export default {
   name: 'ContactModal',
@@ -66,6 +68,7 @@ export default {
     Dialog,
     DialogPanel,
     DialogTitle,
+    ContactForm,
   },
   props: {
     isOpen: {
